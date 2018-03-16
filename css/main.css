@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pre-header {
+    font-size: 4rem;
+    height: 2em;
+}
+
+.header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: #004f8c;
+    color: whitesmoke;
+    font-size: 2.5rem;
+}
+
+.sideNavBtn {
+    background-color: darkgray;
+    color: black;
+    padding: 0px 0.25em 0px 0.25em;
+    text-decoration: none;
+    cursor: pointer;
+    margin-right: 1%;
+}
+
+.sideNavBtn:hover {
+    background-color: gray;
+}
+
+.sideNavBtn:active {
+    background-color: rgb(94, 94, 94);
+}
+
+.container {
+    padding: 0% 1%;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: whitesmoke;
+    background-color: #3475a7;
+    width: 0;
+    height: 100%;
+    overflow-x: hidden;
+    transition: width 0.2s ease;
+}
+
+.sidebar .sTitle {
+    display: block;
+    padding: 0.3em 0.2em;
+    font-size: 2.5rem;
+}
+
+.sidebar a {
+    display: block;
+    color: lightgray;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: 0.3em;
+}
+
+.closeNavBtn {
+    position: absolute;
+    padding: 0 0.25em;
+    font-size: 3em;
+    top: 0; right: 0;
+    cursor: pointer;
+    color: lightgray;
+}
+
+.closeNavBtn:hover {
+    color: whitesmoke;
+}
+
+.sidebar a:hover {
+    background-color: #2d6996;
+    color: whitesmoke;
+}
+
+.footer {
+    color: whitesmoke;
+    background-color: #004f8c;
+}
