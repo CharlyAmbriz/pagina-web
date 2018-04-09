@@ -5,23 +5,23 @@
         <title>Hola</title>
         <link rel="stylesheet" href="./css/main.css">
     </head>
-    <body>
+    <body id="body">
         <div class="pre-header">
             aloo
         </div>
 
         <header id="header" class="header">
-            <span class="sideNavBtn" onclick="toogleSidebar()" type="button">|||</span>
-            Bienvenido! Aún estoy construyendo la página, mientras puedes ver los avances!
+            <span id="sideNavBtn" class="sideNavBtn" type="button">|||</span>
+            Bienvenido!
         </header>
         <div id="sidebar" class="sidebar">
             <span class="sTitle">Ola k ase</span>
-            <span onclick="toogleSidebar()" class="closeNavBtn">&times;</span>
-            <a href="/">Mi perfil</a>
-            <a href="/">Mis compras</a>
-            <a href="/">Tendencias</a>
-            <a href="/">Configuracion</a>
-            <a href="/">Cerrar sesion</a>
+            <span id="closeNavBtn" class="closeNavBtn">&times;</span>
+            <a class="sideMenu" href="#">Mi perfil</a>
+            <a class="sideMenu" href="#">Mis compras</a>
+            <a class="sideMenu" href="#">Tendencias</a>
+            <a class="sideMenu" href="#">Configuracion</a>
+            <a class="sideMenu" href="#">Cerrar sesion</a>
         </div>
 
         <div class="container">
@@ -44,26 +44,38 @@
 
         <footer class="footer">
             <ul>
-                <li>asd</li>
-                <li>asd</li>
-                <li>asd</li>
+                <li>Alo</li>
+                <li>polisia</li>
+                <li>:D</li>
             </ul>
-         123123123123123
         </footer>
 
         <script type="text/javascript">
-            var tSidebar = false;
-            function toogleSidebar() {
-                var sidebar = document.getElementById('sidebar')
-                
-                if (!tSidebar) {
-                    sidebar.style.width = '17em'
-                    tSidebar = true;
+            document.getElementById('sideNavBtn').onclick = function(e) {
+                e.stopPropagation()
+                document.getElementById('sidebar').classList.add('sidebarShow')
+
+                var elementos = document.getElementsByClassName('sideMenu')
+
+                for (let item of elementos) {
+                    item.onclick = function(e) {
+                        e.stopPropagation()
+                        document.getElementById('sidebar').classList.remove('sidebarShow')
+                    }
                 }
-                else {
-                    tSidebar = false;
-                    sidebar.style.width = '0'
-                }
+            }
+
+            document.getElementById('sidebar').onclick = function(e) {
+                e.stopPropagation()
+            }
+
+            document.getElementById('closeNavBtn').onclick = function(e) {
+                e.stopPropagation()
+                document.getElementById('sidebar').classList.remove('sidebarShow')
+            }
+
+            document.getElementById('body').onclick = function(e) {
+                document.getElementById('sidebar').classList.remove('sidebarShow')
             }
         </script>
     </body>
