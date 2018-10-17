@@ -6,14 +6,17 @@
         <link rel="stylesheet" href="./css/main.css">
     </head>
     <body id="body">
-        <div class="pre-header">
-            aloo
-        </div>
+        <div class="header">
+            <div class="pre-header">
+                aloo
+            </div>
 
-        <header id="header" class="header">
-            <span id="sideNavBtn" class="sideNavBtn" type="button">|||</span>
-            Bienvenido!
-        </header>
+            <header id="header-bar" class="header-bar">
+                <span id="sideNavBtn" class="sideNavBtn" type="button">|||</span>
+                Bienvenido!
+            </header>
+        </div>
+        
         <div id="sidebar" class="sidebar">
             <span class="sTitle">Ola k ase</span>
             <span id="closeNavBtn" class="closeNavBtn">&times;</span>
@@ -39,7 +42,27 @@
             </p>
             <p> 
                 Nulla ut enim feugiat, lobortis ante nec, congue ligula. Nullam fringilla placerat justo, vitae consectetur ex posuere in. Aliquam nec mattis diam. Sed leo libero, bibendum et mollis vel, mattis sit amet lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec aliquet velit at purus bibendum placerat. Vivamus vitae enim eu metus fermentum sagittis. Proin mattis odio quis leo pharetra luctus. Fusce accumsan elit sit amet ante semper, vel ullamcorper risus eleifend. Quisque at nisl quis magna ullamcorper dapibus. In finibus, tortor in euismod feugiat, est metus interdum lectus, ut hendrerit augue mi non quam.
-            </p>
+            </p>            
+
+            <section class="cards">
+                <div id="card" class="card">
+                    <div class="card-header">
+                        <h2>Pto el que lo lea</h2>
+                    </div>
+                    <div class="card-footer">
+                        <h4>Despto el que le pique</h4>
+                    </div>
+                </div>
+
+                <div id="card" class="card">
+                    <div class="card-header">
+                        <h2>Pto el que lo lea</h2>
+                    </div>
+                    <div class="card-footer">
+                        <h4>Despto el que le pique</h4>
+                    </div>
+                </div>
+            </section>
         </div>
 
         <footer class="footer">
@@ -50,33 +73,7 @@
             </ul>
         </footer>
 
-        <script type="text/javascript">
-            document.getElementById('sideNavBtn').onclick = function(e) {
-                e.stopPropagation()
-                document.getElementById('sidebar').classList.add('sidebarShow')
-
-                var elementos = document.getElementsByClassName('sideMenu')
-
-                for (let item of elementos) {
-                    item.onclick = function(e) {
-                        e.stopPropagation()
-                        document.getElementById('sidebar').classList.remove('sidebarShow')
-                    }
-                }
-            }
-
-            document.getElementById('sidebar').onclick = function(e) {
-                e.stopPropagation()
-            }
-
-            document.getElementById('closeNavBtn').onclick = function(e) {
-                e.stopPropagation()
-                document.getElementById('sidebar').classList.remove('sidebarShow')
-            }
-
-            document.getElementById('body').onclick = function(e) {
-                document.getElementById('sidebar').classList.remove('sidebarShow')
-            }
+        <script src="js/main.js">
         </script>
     </body>
 </html>

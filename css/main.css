@@ -1,26 +1,34 @@
 body {
+    background-color: #E0E1DD;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+}
+
+.header {
+    flex: 0 0 auto;
 }
 
 .pre-header {
+    background-color: #778DA9;
     font-size: 4rem;
     height: 2em;
 }
 
-.header {
+.header-bar {
     display: flex;
+    flex-direction: row;
     position: sticky;
     top: 0;
-    background-color: #004f8c;
+    background-color: #2D3142;
     color: whitesmoke;
     font-size: 2.5rem;
 }
 
 .sideNavBtn {
-    background-color: darkgray;
+    background-color: #BA1F33;
     color: black;
     padding: 0px 0.25em 0px 0.25em;
     text-decoration: none;
@@ -29,27 +37,30 @@ body {
 }
 
 .sideNavBtn:hover {
-    background-color: gray;
+    background-color: #91171F;
 }
 
 .sideNavBtn:active {
-    background-color: rgb(94, 94, 94);
+    background-color: #660000;
 }
 
 .container {
-    padding: 0% 1%;
+    flex: 1 0 auto;
+    padding: 1% 1%;
+    margin: 1% 3%;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sidebar {
     position: fixed;
-    top: 0;
-    left: 0;
     color: whitesmoke;
-    background-color: #3475a7;
+    background-color: rgb(82, 111, 146);
     width: 0;
     height: 100%;
     overflow-x: hidden;
     transition: width 0.2s ease;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sidebar .sTitle {
@@ -80,11 +91,62 @@ body {
 }
 
 .sidebar a:hover {
-    background-color: #2d6996;
+    background-color: #2D3142;
     color: whitesmoke;
 }
 
 .footer {
+    flex: 0 0 auto;
     color: whitesmoke;
-    background-color: #004f8c;
+    background-color: #2D3142;
+
+}
+
+.sidebarShow {
+    width: 15rem;
+}
+
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly; 
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 15em;
+    height: 17em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 30px 0 rgba(0, 0, 0, 0.19);
+    transition: opacity 200ms;
+}
+
+.card .card-header {
+    padding: 1%;
+    text-align: center;
+    flex: 1 0 auto;
+}
+
+.card .card-footer {
+    padding: 0.1%;
+    text-align: center;
+    background-color: #778DA9;
+    flex: 0 0 auto;
+}
+
+.card:hover::before {
+    opacity: 1;
+    cursor: pointer;
 }
